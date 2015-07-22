@@ -5,29 +5,72 @@
     <div class="container">
       <div class="jumbotron">
         <h1>Application</h1>
-        <h3>Server Details</h3>
-        <h4>Version - {{version}}</h4>
-        <h4>Local - {{local}}</h4>
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Server Details</h3>
+            <h4>Version - {{version}}</h4>
+            <h4>Local - {{local}}</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <a href="#" class="btn btn-primary btn-block"data-toggle="modal" data-target="#nodeModal" class="btn btn-default btn-block">Add VPCS Node</a>
+        </div>
+        <div class="col-md-3">
+          <a href="#" class="btn btn-primary btn-block"data-toggle="modal" data-target="#edgeModal" class="btn btn-default btn-block"> Add Edge</a>
+        </div>
+      </div>
+
+      <div class="modal fade" id="nodeModal" tabindex="1" role="dialog" aria-labelledby="nodeModalLabel">
+          <div class="modal-dialog" role="form">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h3 class="modal-title" id="nodeModalLabel">Add VPCS Node</h3>
+                  </div>
+                  <div class="modal-body">
+                      <form id="nodeAddForm">
+                          <div class="form-group">
+                              <input type="text" class="form-control" id="node-label" placeholder="Node Name">
+                          </div>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="addNode();">Add Node</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="modal fade" id="edgeModal" tabindex="1" role="dialog" aria-labelledby="edgeModalLabel">
+          <div class="modal-dialog" role="form">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h3 class="modal-title" id="edgeModalLabel">Link Nodes</h3>
+                  </div>
+                  <div class="modal-body">
+                      <form id="nodeAddForm">
+                          <div class="form-group">
+                              <input type="text" class="form-control" id="edge-from" placeholder="Node From ID">
+                          </div>
+                          <div class="form-group">
+                              <input type="number" class="form-control" id="edge-to" placeholder="Node To ID">
+                          </div>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="addEdge();">Add Edge</button>
+                      <button type="button" class="btn btn-default" onclick="startVM();">Start VM</button>
+                  </div>
+              </div>
+          </div>
       </div>
 
     <div class="row">
-      <div class="col-md-3">
-        <input id="node-id" class="form-control" type="text" placeholder="Enter Node ID"><br>
-        <input id="node-label" type="text" class="form-control" placeholder="Enter Name"><br>
-        <a type="button" class="btn btn-default btn-block" onclick="addNode();">Add Node</a>
-        <a type="button" class="btn btn-primary btn-block" onclick="updateNode();">Update Node</a>
-        <a type="button" class="btn btn-danger btn-block" onclick="removeNode();">Delete Node</a>
-      </div>
-      <div class="col-md-3">
 
-        <input id="edge-id" type="text" placeholder="Enter Edge ID" class="form-control"><br>
-        <input id="edge-from" type="text" placeholder="From Node ID" class="form-control"><br>
-        <input id="edge-to" type="text" placeholder="To Node ID" class="form-control"><br>
-        <a type="button" class="btn btn-default btn-block" onclick="addEdge();">Add Edge</a>
-        <a type="button" class="btn btn-primary btn-block" onclick="updateEdge();">Update Edge</a>
-        <a type="button" class="btn btn-danger btn-block" onclick="removeEdge();">Delete Edge</a>
-      </div>
-    </div>
     <h4>The Network</h4>
     <div class="" id="network">
 

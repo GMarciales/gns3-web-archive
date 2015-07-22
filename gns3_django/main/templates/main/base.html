@@ -48,6 +48,7 @@
       <ul class="nav navbar-nav">
         <li><a href="#">Application</a></li>
         <li><a href="#" data-toggle="modal" data-target="#settingsModal">Settings</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#projectModal">Add Project</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -78,6 +79,29 @@
         </div>
     </div>
 {% endblock settingsModal %}
+
+{% block projectModal %}
+<div class="modal fade" id="projectModal" tabindex="1" role="dialog" aria-labelledby="projectModalLabel">
+    <div class="modal-dialog" role="form">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="projectModalLabel">Add Project</h3>
+            </div>
+            <div class="modal-body">
+                <form id="projectAddForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="projectName" placeholder="Project Name">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="addProject();">Add Project</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock projectModal %}
 {% block body %}
 {% endblock body %}
 </html>
