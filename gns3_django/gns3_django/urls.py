@@ -23,4 +23,7 @@ urlpatterns = [
     url(r'^server/version/?$', 'main.views.get_server_version', name="server_version"),
     url(r'^project/create', 'main.views.create_project',name="create_project"),
     url(r'^settings/?$', 'main.views.settings', name="settings"),
+    url(r'^vcps/create/?$', 'main.views.create_vcps', name='create_vcps'),
+    url(r'^vcps/link/?$','main.views.link_nodes', name='link_nodes'),
+    url(r'^vcps/start/?$','main.views.start_vm', name='start_vm')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
